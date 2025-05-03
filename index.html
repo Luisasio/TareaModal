@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarea Modal</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/movil.css">
+  <script src="https://kit.fontawesome.com/fe8b02346c.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <header class="cabecera">
+    <div class="contenedor-cabecera ancho">
+      <figure>
+        <img src="img/logo.jpg" alt="">
+      </figure>
+    </div>
+  </header>
+
+  <section>
+    <div class="contenedor-contenido ancho">
+      <main>
+        <small>Our Team</small>
+        <h1>A Dedicated Team of Experts</h1>
+        <h4>Passion, experience and fierce commitment to education are the cornerstones of ur succcess in the beauty industry</h4>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione voluptatibus molestiae molestias ea odio odit eius deserunt adipisci dicta voluptate temporibus corporis itaque veritatis, ducimus id consectetur esse iusto nostrum assumenda rem vitae at. Deleniti vel magni dicta sapiente voluptatum a nemo officiis illum qui, quae veniam commodi quisquam aliquid consequuntur quibusdam voluptate vero totam optio dolor. Nesciunt, debitis sequi.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam ipsa accusantium iure praesentium aliquid libero, eveniet pariatur iusto incidunt.</p>
+        <div class="contenedor-btn-modal" id="boton">
+          <a href="#" class="btn-modal" id="boton_modal">MODAL <i class="fa-regular fa-rectangle-list"></i></a>
+        </div>
+      </main>
+      <div class="contenedor-team">
+        <div class="team1">
+          <figure class="foto-team">
+            <img src="img/foto1.jpg" alt="">
+          </figure>
+          <h4>Jessica Cooper</h4>
+          <small>Esthetican</small>
+          <ul>
+            <li><i class="fa-brands fa-facebook-f"></i></li>
+            <li><i class="fa-brands fa-twitter"></i></li>
+            <li><i class="fa-brands fa-pinterest"></i></li>
+          </ul>
+          <a href="#" class="btn-team">GET IN TOUCH</a>
+        </div>
+        <div class="team1">
+          <figure class="foto-team">
+            <img src="img/foto2.jpg" alt="">
+          </figure>
+          <h4>Robert Wagner</h4>
+          <small>Hairdresser</small>
+          <ul>
+            <li><i class="fa-brands fa-facebook-f"></i></li>
+            <li><i class="fa-brands fa-twitter"></i></li>
+            <li><i class="fa-brands fa-pinterest"></i></li>
+          </ul>
+          <a href="#" class="btn-team">GET IN TOUCH</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- contenido del modal -->
+  <section class="fondomodal" id="modal">
+    <div class="contenedor-modal">
+      <div class="cerrar-modal ">
+        <i id="cerrar_modal" class="cerrarmodal fas fa-times-circle"></i>
+      </div>
+      <form action="" class="formulario-modal">
+        <h2>Contact Us</h2>
+        <br>
+        <p>If you hace any cuestions concerning our services, please fill out the contact from bellow.</p>
+        <br>
+        <input type="text" placeholder="Name *" class="input-form">
+        <input type="email" placeholder="Email *" class="input-form">
+        <textarea name="" id="" placeholder="Messsage *"></textarea>
+        <button class="btn-team">Submit</button>
+      </form>
+    </div>
+  </section>
+
+
+
+
+  <footer class="footer">
+    <div class="contenedor-footer ancho"></div>
+  </footer>
+
+
+
+
+  <script>
+
+    $("#boton_modal").click(function () {
+      $("#modal").addClass("mostrar");
+    })
+
+    $("#cerrar_modal").click(function () {
+      $("#modal").removeClass("mostrar");
+    })
+
+    // por tiempo 5 segundos
+    function tiempo() {
+      $("#modal").addClass("mostrar");
+    }
+    setTimeout(tiempo, 5000);
+
+
+    // click por fuera
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        $("#modal").removeClass("mostrar");
+      }
+    };
+
+    // click tecla ESC
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
+        $("#modal").removeClass("mostrar");
+      }
+    });
+
+    // scroll mas de 600px
+    function onScroll() {
+      const scrollTop = window.scrollY;
+
+      if (scrollTop > 600) {
+        $("#modal").addClass("mostrar");
+      }
+    }
+    window.addEventListener('scroll', onScroll);
+
+
+
+  </script>
+</body>
+</html>
